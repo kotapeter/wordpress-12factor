@@ -2,7 +2,7 @@
 
 define('WP_CONTENT_DIR', dirname(__FILE__) . '/wp-content/');
 
-$db = array_merge(['port' => 3306], parse_url(getenv('JAWSDB_URL')?:getenv('CLEARDB_DATABASE_URL')));
+$db = array_merge(['port' => 3306], parse_url(getenv('DB_CONNECTION_URL')?:getenv('CLEARDB_DATABASE_URL')));
 define('DB_NAME',     substr($db['path'], 1));
 define('DB_USER',     $db['user']);
 define('DB_PASSWORD', $db['pass']);
